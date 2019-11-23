@@ -3,17 +3,15 @@ import random
 NUM_OF_CARDS = 52
 
 
-class cardMgr:
-    def __init__(self, color, size):
+class CardMgr:
+    def __init__(self):
         self.cards = [0] * NUM_OF_CARDS
         self.selectedCards = []
-        self.color = color
-        self.size = size
 
-    def getCards(self, numOfCards):
+    def get_cards(self, num_of_cards):
 
         list = []
-        for i in range(numOfCards):
+        for i in range(num_of_cards):
             r = None
             while r in self.selectedCards or r is None:
                 r = random.randint(0, NUM_OF_CARDS - 1)
@@ -28,8 +26,6 @@ class cardMgr:
             print(i)
 
 
-cardmgr = cardMgr('Orange', 7)
-print(cardmgr.getCards(5))
-print(cardmgr.getCards(5))
-print(cardmgr.getCards(5))
-print(cardmgr.getCards(5))
+card_mgr = CardMgr()
+print(card_mgr.get_cards(5))
+
